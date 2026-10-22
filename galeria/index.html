@@ -14,6 +14,9 @@
   .hidden-section{display:none;}
   .open-section{display:block; animation: fadeIn 0.3s ease;}
   @keyframes fadeIn{from{opacity:0; transform:translateY(-6px)} to{opacity:1; transform:translateY(0)}}
+  .lightbox-img{cursor:zoom-in; transition:transform 0.2s}
+  .lightbox-img:hover{transform:scale(1.02)}
+  #lightbox{backdrop-filter: blur(12px);}
 </style>
 </head>
 <body class="bg-zinc-950">
@@ -27,7 +30,7 @@
   <div class="mb-10">
     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-black text-[10px] tracking-[0.18em] stencil mb-6"><span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span>2 CONCERTOS • CLICA EM ABRIR</div>
     <h1 class="brush-title text-[48px] md:text-[78px] text-white uppercase">Soltem<br><span class="text-zinc-400">Ao Vivo</span></h1>
-    <p class="mono text-[13px] text-zinc-400 mt-4">Galeria organizada por concerto. Clica em <span class="text-white">ABRIR</span> para ver os vídeos e fotos de cada concerto.</p>
+    <p class="mono text-[13px] text-zinc-400 mt-4">Galeria organizada por concerto. Clica em <span class="text-white">ABRIR</span> para ver os vídeos e fotos. <span class="text-white">Clica nas fotos para ampliar.</span></p>
   </div>
 
   <!-- CONCERTO 01 -->
@@ -44,21 +47,19 @@
     </div>
     <div id="content-sabor" class="hidden-section border-t border-zinc-800 p-5 md:p-6 bg-zinc-950">
       <div class="grid md:grid-cols-2 gap-4 mb-8">
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/projeto_restaurante_sabor_de_minas/WhatsApp%20Video%202026-10-22%20at%2015.17.37.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-22 at 15.17.37.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/projeto_restaurante_sabor_de_minas/WhatsApp%20Video%202026-10-22%20at%2015.17.45.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-22 at 15.17.45.mp4</div></div>
-
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full" poster=""><source src="videos/projeto_restaurante_sabor_de_minas/WhatsApp%20Video%202026-10-22%20at%2015.17.37.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/projeto_restaurante_sabor_de_minas/WhatsApp%20Video%202026-10-22%20at%2015.17.45.mp4" type="video/mp4"></video></div>
       </div>
       <div class="flex items-center gap-2 mb-3"><span class="stencil text-[11px] text-zinc-500">FOTOS • SABOR DE MINAS</span><span class="h-px flex-1 bg-zinc-800"></span></div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-<img src="fotos/projeto_restaurante_sabor_de_minas/Concerto dos Soltem os Lobos_10OUT2026.png" alt="Concerto dos Soltem os Lobos_10OUT2026.png" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/projeto_restaurante_sabor_de_minas/Soltem os Lobos ao Luar.png" alt="Soltem os Lobos ao Luar.png" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/projeto_restaurante_sabor_de_minas/Soltem os Lobos.png" alt="Soltem os Lobos.png" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/projeto_restaurante_sabor_de_minas/Soltem os Lobos_Concerto_10OUT2026.jpg" alt="Soltem os Lobos_Concerto_10OUT2026.jpg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/projeto_restaurante_sabor_de_minas/Soltem os Lobos_Concerto_10OUT2026-1por1.jpg" alt="Soltem os Lobos_Concerto_10OUT2026-1por1.jpg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/projeto_restaurante_sabor_de_minas/WhatsApp Image 2026-10-22 at 15.17.36.jpeg" alt="WhatsApp Image 2026-10-22 at 15.17.36.jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/projeto_restaurante_sabor_de_minas/WhatsApp Image 2026-10-22 at 15.17.45 (1).jpeg" alt="WhatsApp Image 2026-10-22 at 15.17.45 (1).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/projeto_restaurante_sabor_de_minas/WhatsApp Image 2026-10-22 at 15.17.45.jpeg" alt="WhatsApp Image 2026-10-22 at 15.17.45.jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/Concerto%20dos%20Soltem%20os%20Lobos_10OUT2026.png" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/Soltem%20os%20Lobos%20ao%20Luar.png" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/Soltem%20os%20Lobos.png" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/Soltem%20os%20Lobos_Concerto_10OUT2026.jpg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/Soltem%20os%20Lobos_Concerto_10OUT2026-1por1.jpg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/WhatsApp%20Image%202026-10-22%20at%2015.17.36.jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/WhatsApp%20Image%202026-10-22%20at%2015.17.45%20(1).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/projeto_restaurante_sabor_de_minas/WhatsApp%20Image%202026-10-22%20at%2015.17.45.jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
       </div>
     </div>
   </section>
@@ -71,48 +72,43 @@
         <div class="mono text-[11px] text-zinc-500 mt-1">15 vídeos • 13 fotos</div>
       </div>
       <div class="flex items-center gap-3">
-        <span class="text-[10px] px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 stencil hidden md:inline">PRIVADO</span>
+        <span class="text-[10px] px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 stencil hidden md:inline">PRIVADO</span>
         <button onclick="toggleConcert('cristina')" id="btn-cristina" class="h-[38px] px-6 rounded-full bg-white text-black text-[11px] stencil font-bold hover:bg-zinc-200 transition flex items-center gap-2">ABRIR <span id="icon-cristina">↓</span></button>
       </div>
     </div>
     <div id="content-cristina" class="hidden-section border-t border-zinc-800 p-5 md:p-6 bg-zinc-950">
-      <div class="rounded-[18px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9] mb-6 relative">
-        <video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.02.46.mp4" type="video/mp4"></video>
-        <div class="absolute top-3 left-3 px-2 py-1 rounded-full bg-black/70 text-white text-[10px] stencil">WhatsApp Video 2026-10-18 at 14.02.46.mp4</div>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.03.01.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.03.01.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.03.52.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.03.52.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.03.53%20%281%29.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.03.53 (1).mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.03.53.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.03.53.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.02%20%281%29.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.05.02 (1).mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.02.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.05.02.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.03.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.05.03.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.04%20%281%29.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.05.04 (1).mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.04%20%282%29.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.05.04 (2).mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.04%20%283%29.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.05.04 (3).mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.04.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 14.05.04.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.07.51.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 16.07.51.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.08.56.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 16.08.56.mp4</div></div>
-<div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.10.55.mp4" type="video/mp4"></video><div class="absolute bottom-1 left-1 text-[9px] mono bg-black/60 text-white px-1.5 py-0.5 rounded truncate max-w-[95%]">WhatsApp Video 2026-10-18 at 16.10.55.mp4</div></div>
-
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.08.03.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.08.31.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.08.36.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.05%20(1).mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.05.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.07.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.08.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.22.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.24%20(1).mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.24.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.09.30.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2014.05.04.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.07.51.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.08.56.mp4" type="video/mp4"></video></div>
+        <div class="relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]"><video controls playsinline webkit-playsinline preload="metadata" class="w-full h-full"><source src="videos/concerto_para_a_cristina/WhatsApp%20Video%202026-10-18%20at%2016.10.55.mp4" type="video/mp4"></video></div>
       </div>
       <div class="flex items-center gap-2 mb-3"><span class="stencil text-[11px] text-zinc-500">FOTOS • CRISTINA</span><span class="h-px flex-1 bg-zinc-800"></span></div>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.08.56 (1).jpeg" alt="WhatsApp Image 2026-10-18 at 16.08.56 (1).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.08.56 (2).jpeg" alt="WhatsApp Image 2026-10-18 at 16.08.56 (2).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.08.56 (3).jpeg" alt="WhatsApp Image 2026-10-18 at 16.08.56 (3).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.08.56.jpeg" alt="WhatsApp Image 2026-10-18 at 16.08.56.jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55 (1).jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55 (1).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55 (2).jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55 (2).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55 (3).jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55 (3).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55 (4).jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55 (4).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55 (5).jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55 (5).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55 (6).jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55 (6).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55 (7).jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55 (7).jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.55.jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.55.jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-<img src="fotos/concerto_para_a_cristina/WhatsApp Image 2026-10-18 at 16.10.56.jpeg" alt="WhatsApp Image 2026-10-18 at 16.10.56.jpeg" class="w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
-
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.08.56%20(1).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.08.56%20(2).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.08.56%20(3).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.08.56.jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55%20(1).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55%20(2).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55%20(3).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55%20(4).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55%20(5).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55%20(6).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55%20(7).jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.55.jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
+        <img onclick="openLightbox(this.src)" src="fotos/concerto_para_a_cristina/WhatsApp%20Image%202026-10-18%20at%2016.10.56.jpeg" class="lightbox-img w-full aspect-square object-cover rounded-[12px] bg-zinc-900 border border-zinc-800" loading="lazy">
       </div>
     </div>
   </section>
@@ -123,11 +119,17 @@
   </div>
 </main>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur hidden flex-col items-center justify-center p-4 md:p-10" onclick="closeLightbox()">
+  <button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-zinc-800 text-white grid place-items-center">✕</button>
+  <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain rounded-[12px] border border-zinc-800">
+  <div class="mono text-[11px] text-zinc-500 mt-4">Clica fora ou no X para fechar</div>
+</div>
+
 <script>
 function toggleConcert(id) {
   const content = document.getElementById('content-' + id);
   const btn = document.getElementById('btn-' + id);
-  const icon = document.getElementById('icon-' + id);
   const isHidden = content.classList.contains('hidden-section');
   if (isHidden) {
     content.classList.remove('hidden-section');
@@ -141,10 +143,22 @@ function toggleConcert(id) {
     btn.innerHTML = 'ABRIR <span id="icon-' + id + '">↓</span>';
     btn.classList.add('bg-white','text-black');
     btn.classList.remove('bg-zinc-800','text-white','border','border-zinc-700');
-    // pausa videos ao fechar
     content.querySelectorAll('video').forEach(v => v.pause());
   }
 }
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.remove('hidden');
+  document.getElementById('lightbox').classList.add('flex');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.add('hidden');
+  document.getElementById('lightbox').classList.remove('flex');
+  document.body.style.overflow='';
+  document.getElementById('lightbox-img').src='';
+}
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
 </script>
 </body>
 </html>

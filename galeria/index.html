@@ -159,15 +159,39 @@ async function listar(pasta, nome, extensoes) {
 
 function criarVideo(url) {
   const box = document.createElement('div');
-  box.className = 'relative rounded-[14px] overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]';
+  box.className = 'relative rounded-[14px] overflow-hidden bg-black border border-zinc-800 aspect-[16/9]';
+
   const v = document.createElement('video');
   v.controls = true;
   v.setAttribute('playsinline', '');
   v.setAttribute('webkit-playsinline', '');
   v.preload = 'metadata';
-  v.className = 'w-full h-full';
-  v.src = url + '#t=0.1';
+  v.className = 'w-full h-full object-contain';
+  v.src = url;
+
+  // botão de play por cima (garante que há sempre um botão visível no telemóvel)
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Reproduzir vídeo');
+  btn.innerHTML = '▶';
+  btn.className = 'absolute inset-0 m-auto w-16 h-16 rounded-full bg-white/90 text-black text-[24px] pl-1 grid place-items-center shadow-lg z-10';
+  btn.addEventListener('click', () => { v.play().catch(() => {}); });
+
+  v.addEventListener('play',  () => { btn.style.display = 'none'; });
+  v.addEventListener('pause', () => { btn.style.display = ''; });
+  v.addEventListener('ended', () => { btn.style.display = ''; });
+
+  // se o telemóvel não conseguir ler o vídeo, avisa em vez de ficar em branco
+  v.addEventListener('error', () => {
+    btn.style.display = 'none';
+    const aviso = document.createElement('div');
+    aviso.className = 'absolute inset-0 grid place-items-center text-center p-4 mono text-[11px] text-zinc-400';
+    aviso.textContent = 'Este vídeo não pode ser reproduzido neste dispositivo.';
+    box.appendChild(aviso);
+  });
+
   box.appendChild(v);
+  box.appendChild(btn);
   return box;
 }
 

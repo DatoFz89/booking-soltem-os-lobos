@@ -184,9 +184,11 @@ function criarVideo(url) {
   // se o telemóvel não conseguir ler o vídeo, avisa em vez de ficar em branco
   v.addEventListener('error', () => {
     btn.style.display = 'none';
+    const cod = v.error ? v.error.code : '?';
     const aviso = document.createElement('div');
-    aviso.className = 'absolute inset-0 grid place-items-center text-center p-4 mono text-[11px] text-zinc-400';
-    aviso.textContent = 'Este vídeo não pode ser reproduzido neste dispositivo.';
+    aviso.className = 'absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4 mono text-[11px] text-zinc-400 bg-zinc-950/80 z-20';
+    aviso.innerHTML = 'Este vídeo não pode ser reproduzido neste dispositivo.<br>(erro ' + cod + ')<br>' +
+      '<a href="' + url + '" target="_blank" class="underline text-white">Abrir ficheiro</a>';
     box.appendChild(aviso);
   });
 
